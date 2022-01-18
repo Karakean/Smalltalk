@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 
 <st-source>
-<time-stamp>From VisualWorks® Personal Use Edition, 8.3 of July 28, 2017 on January 18, 2022 at 12:36:10</time-stamp>
+<time-stamp>From VisualWorks® Personal Use Edition, 8.3 of July 28, 2017 on January 18, 2022 at 14:13:30</time-stamp>
 
 
 <component-created>
@@ -113,13 +113,23 @@ Instance Variables:
 <methods>
 <class-id>Wielokat</class-id> <category>actions</category>
 
-<body package="Języki Programowania" selector="obrot">obrot
+<body package="Języki Programowania" selector="ustaw">ustaw
+	"ustawia wierzcholki wielokata"</body>
+
+<body package="Języki Programowania" selector="obracanie">obracanie
 	"obraca wielokat w prawo o 90 stopni"
 	 | x y |
 	1 to: wierzcholki size do: [:i | 
 	x:= (wierzcholki at:i)x.
 	y:= (wierzcholki at:i)y.
         wierzcholki at: i put: (-1)*y@x.].</body>
+
+<body package="Języki Programowania" selector="obrot">obrot
+	"obraca wielokat w prawo o 90 stopni"
+	| figura |
+	figura:=self dcopy.
+      figura obracanie.
+	^figura</body>
 
 <body package="Języki Programowania" selector="drukuj">drukuj
 		Transcript show: 'wierzcholki: '; cr.
